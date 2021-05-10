@@ -15,8 +15,9 @@ public class BoardListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<BoardVO> list=BoardDAO.selBoardList();
 		request.setAttribute("list", list);
-		String jsp="/WEB-INF/view/list3.jsp";
-		request.getRequestDispatcher(jsp).forward(request, response);
+		MyUtils.openJSP("list3", request, response);
+//		String jsp="/WEB-INF/view/list3.jsp";
+//		request.getRequestDispatcher(jsp).forward(request, response);
 	}
 
 	
